@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "48f318fb36a695d0",
+        "id": "8488bc60492e726a",
         "type": "tabs",
         "children": [
           {
-            "id": "787567722ba46502",
+            "id": "5268ce91cbc8f619",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "Daily/2025-03-12.md",
-                "mode": "source",
-                "source": false
+                "aFile": "README.md",
+                "bFile": "README.md",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "2025-03-12"
+              "icon": "diff",
+              "title": "Diff: README"
             }
           }
         ]
@@ -190,7 +190,7 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "787567722ba46502",
+  "active": "5268ce91cbc8f619",
   "lastOpenFiles": [
     "README.md",
     "Daily/2025-03-12.md",
