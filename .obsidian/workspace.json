@@ -11,10 +11,14 @@
             "id": "74120e7152a5f033",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Daily/2025-03-12.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "2025-03-12"
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Daily/2025-03-12.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "反向链接"
+              "title": "2025-03-12 的反向链接列表"
             }
           },
           {
@@ -137,23 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily_Routine/2025-03-12.md",
+                "file": "Daily/2025-03-12.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
               "title": "2025-03-12 的大纲"
-            }
-          },
-          {
-            "id": "0b35a1a7b4253dfe",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
             }
           },
           {
@@ -165,9 +160,19 @@
               "icon": "history",
               "title": "History"
             }
+          },
+          {
+            "id": "0dfbce28b3700532",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -185,7 +190,7 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "0b35a1a7b4253dfe",
+  "active": "4a56f47284aeaa34",
   "lastOpenFiles": [
     "Daily/2025-03-12.md",
     "欢迎.md",
