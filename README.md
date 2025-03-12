@@ -5,4 +5,4 @@
   - 2025-03-12.md
 - ## Templates
   - Daily.md
-- README.md
+- ## README.md

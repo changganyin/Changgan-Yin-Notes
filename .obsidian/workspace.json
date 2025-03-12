@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "8488bc60492e726a",
+        "id": "e51244ee40d696a8",
         "type": "tabs",
         "children": [
           {
-            "id": "5268ce91cbc8f619",
+            "id": "396d76d9f39bfa69",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "README.md",
-                "bFile": "README.md",
-                "aRef": ""
+                "file": "README.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: README"
+              "icon": "lucide-file",
+              "title": "README"
             }
           }
         ]
@@ -190,10 +190,10 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "5268ce91cbc8f619",
+  "active": "396d76d9f39bfa69",
   "lastOpenFiles": [
-    "README.md",
     "Daily/2025-03-12.md",
+    "README.md",
     "欢迎.md",
     "Templates/Daily.md",
     "Tasks Plugin - 查看并检查您的状态 2025-03-12 20-19-29.md",
