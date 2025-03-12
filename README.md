@@ -1,6 +1,6 @@
 **Here are my obsidian notes.**
 
-- [x] sync on windows
+- [x] sync on Windows 11
 - [x] sync on iPhone
 
 <font size=6>Contents</font>
