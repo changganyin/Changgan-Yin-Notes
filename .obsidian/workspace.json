@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "114847ddd8b3713f",
+        "id": "82711af21837322f",
         "type": "tabs",
         "children": [
           {
-            "id": "7416ac9929237612",
+            "id": "d1c3a4612878ae99",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -142,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily_Routine/2025-03-12.md",
+                "file": "Daily/2025-03-12.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -152,7 +152,7 @@
             }
           },
           {
-            "id": "46c0901fb871c203",
+            "id": "2d57246bb661fa26",
             "type": "leaf",
             "state": {
               "type": "git-view",
@@ -180,7 +180,7 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "7416ac9929237612",
+  "active": "4a56f47284aeaa34",
   "lastOpenFiles": [
     "Daily/2025-03-12.md",
     "Templates/Daily.md",
