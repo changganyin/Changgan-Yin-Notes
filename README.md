@@ -1,7 +1,7 @@
 **Here are my obsidian notes.**
 
 - [x] sync on windows
-- [ ] sync on iPhone
+- [x] sync on iPhone
 
 <font size=6>Contents</font>
 - <font size=5>Daily</font>
