@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ba56a3828305c51a",
+        "id": "114847ddd8b3713f",
         "type": "tabs",
         "children": [
           {
-            "id": "a3d6e6b0ceba439e",
+            "id": "7416ac9929237612",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Daily/2025-03-12.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "2025-03-12"
             }
           }
         ]
@@ -90,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Templates/Daily.md",
+                "file": "Daily/2025-03-12.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Daily 的反向链接列表"
+              "title": "2025-03-12 的反向链接列表"
             }
           },
           {
@@ -138,16 +142,17 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Daily_Routine/2025-03-12.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "2025-03-12 的大纲"
             }
           },
           {
-            "id": "17c7783df9cf417d",
+            "id": "46c0901fb871c203",
             "type": "leaf",
             "state": {
               "type": "git-view",
@@ -175,11 +180,11 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "a3d6e6b0ceba439e",
+  "active": "7416ac9929237612",
   "lastOpenFiles": [
+    "Daily/2025-03-12.md",
     "Templates/Daily.md",
     "Tasks Plugin - 查看并检查您的状态 2025-03-12 20-19-29.md",
-    "Daily/2025-03-12.md",
     "Daily",
     "Templates",
     "Daily_Routine/2025-03-12.md",
