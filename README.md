@@ -1,7 +1,7 @@
 **Here are my obsidian notes.**
 
 - [x] sync on Windows 11
-- [x] sync on iPhone
+- [x] sync on iPhone through iSH
 
 <font size=6>Contents</font>
 - <font size=5>Daily</font>
