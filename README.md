@@ -1,5 +1,8 @@
 **Here are my obsidian notes.**
 
+- [x] sync on windows
+- [x] sync on iPhone
+
 <font size=6>Contents</font>
 - <font size=5>Daily</font>
   - 2025-03-12.md
