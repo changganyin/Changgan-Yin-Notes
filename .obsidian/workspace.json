@@ -155,6 +155,16 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "9774d5c3ca18632b",
+            "type": "leaf",
+            "state": {
+              "type": "git-history-view",
+              "state": {},
+              "icon": "history",
+              "title": "History"
+            }
           }
         ],
         "currentTab": 4
@@ -175,7 +185,7 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "b3dfa0f455749bc0",
+  "active": "0b35a1a7b4253dfe",
   "lastOpenFiles": [
     "Daily/2025-03-12.md",
     "欢迎.md",
