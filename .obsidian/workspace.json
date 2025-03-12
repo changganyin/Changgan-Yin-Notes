@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "82711af21837322f",
+        "id": "7bc3b5f262c3c4e0",
         "type": "tabs",
         "children": [
           {
-            "id": "d1c3a4612878ae99",
+            "id": "1233af1c22d45f36",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -180,15 +180,15 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "4a56f47284aeaa34",
+  "active": "1233af1c22d45f36",
   "lastOpenFiles": [
+    "欢迎.md",
     "Daily/2025-03-12.md",
     "Templates/Daily.md",
     "Tasks Plugin - 查看并检查您的状态 2025-03-12 20-19-29.md",
     "Daily",
     "Templates",
     "Daily_Routine/2025-03-12.md",
-    "欢迎.md",
     "Daily_Routine"
   ]
 }
