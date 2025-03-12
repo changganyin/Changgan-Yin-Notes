@@ -1,8 +1,8 @@
 **Here are my obsidian notes.**
 
-# Contents
-- ## Daily
+<font size=6>Contents</font>
+- <font size=5>Daily</font>
   - 2025-03-12.md
-- ## Templates
+- <font size=5>Templates</font>
   - Daily.md
-- ## README.md
+- <font size=5>README.md</font>
