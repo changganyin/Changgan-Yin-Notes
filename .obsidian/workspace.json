@@ -13,30 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily/2025-03-13.md",
+                "file": "Work/Loss Settings.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-03-13"
-            }
-          },
-          {
-            "id": "d49c9dce68bf47f2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Work/Loss 设置.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Loss 设置"
+              "title": "Loss Settings"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -205,15 +190,16 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "d49c9dce68bf47f2",
+  "active": "63080a25d9a4eef5",
   "lastOpenFiles": [
-    "README.md",
-    "Work/Loss 设置.md",
-    "Pasted image 20250314103331.png",
     "Daily/2025-03-13.md",
+    "Daily/2025-03-14.md",
+    "Daily/2025-03-12.md",
+    "Work/Loss Settings.md",
+    "README.md",
+    "Pasted image 20250314103331.png",
     "Work",
     "Templates/Daily.md",
-    "Daily/2025-03-12.md",
     "欢迎.md",
     "Tasks Plugin - 查看并检查您的状态 2025-03-12 20-19-29.md",
     "Daily",
