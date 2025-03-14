@@ -1,6 +1,3 @@
----
-date: 2025-03-14
----
 ## 要求
 ![[Pasted image 20250314103331.png]]
 ## 主要方法 [Sentence-BERT](https://zhuanlan.zhihu.com/p/659682364)
