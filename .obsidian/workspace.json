@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily/2025-03-16.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-03-16"
+              "title": "README"
             }
           }
         ]
@@ -192,8 +192,8 @@
   },
   "active": "63080a25d9a4eef5",
   "lastOpenFiles": [
-    "Work/Loss Settings.md",
     "Daily/2025-03-16.md",
+    "Work/Loss Settings.md",
     "Pasted image 20250316093347.png",
     "Templates/Daily.md",
     "Daily/2025-03-14.md",
