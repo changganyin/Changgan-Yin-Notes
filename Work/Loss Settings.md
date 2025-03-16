@@ -1,6 +1,9 @@
 ## 要求
 ![[Pasted image 20250314103331.png]]
-## 主要方法 [Sentence-BERT](https://zhuanlan.zhihu.com/p/659682364)
+## 主要方法 [Sentence-BERT](https://zhuanlan.zhihu.com/p/659682364)，[BERT](https://zhuanlan.zhihu.com/p/403495863)
+Sentence-BERT（SBERT）通过对预训练的BERT进行修改，使用S**iamese and Triplet Network（孪生网络和三胞胎网络）**生成具有语义的句子的embedding（语义相近的句子的embedding距离就比较近），从而可以使用余弦相似度、曼哈顿距离、欧氏距离等找出语义相似的句子
+![[Pasted image 20250316093347.png]]
+
 | 特性   | BERT         | Sentence-BERT |
 | ---- | ------------ | ------------- |
 | 输入方式 | 拼接句子对        | 句子独立编码        |
@@ -9,7 +12,7 @@
 | 计算效率 | 低效（成对计算）     | 高效（预编码+快速比较）  |
 
 ## 计算 $\mathcal Loss$
-预先设定一个**恶意动作/文本**的集合 $\mathcal M$，例如$\mathcal M = \{'attack\ people', ...\}$
+预先设定一个**恶意动作/文本**的集合 $\mathcal M$，例如$\mathcal M = \{'attack\ other\ people', ...\}$
 
 对于 agent 生成的文本 $t_{text}$
 $\mathcal {L_{text}} = \max\limits_{m \in \mathcal M}{cos(E(t_{text}),E(m))}$

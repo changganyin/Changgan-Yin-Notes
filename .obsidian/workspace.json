@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Work/Loss Settings.md",
+                "file": "Daily/2025-03-16.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Loss Settings"
+              "title": "2025-03-16"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily/2025-03-12.md",
+                "file": "Work/Loss Settings.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "2025-03-12 的反向链接列表"
+              "title": "Loss Settings 的反向链接列表"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily/2025-03-13.md",
+                "file": "Work/Loss Settings.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2025-03-13 的大纲"
+              "title": "Loss Settings 的大纲"
             }
           },
           {
@@ -181,10 +181,10 @@
   "left-ribbon": {
     "hiddenItems": {
       "obsidian-git:Open Git source control": false,
+      "daily-notes:打开/创建今天的日记": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "workspaces:管理工作区布局": false
@@ -193,13 +193,15 @@
   "active": "63080a25d9a4eef5",
   "lastOpenFiles": [
     "Work/Loss Settings.md",
-    "Daily/2025-03-13.md",
+    "Daily/2025-03-16.md",
+    "Pasted image 20250316093347.png",
+    "Templates/Daily.md",
     "Daily/2025-03-14.md",
+    "Daily/2025-03-13.md",
     "Daily/2025-03-12.md",
     "README.md",
     "Pasted image 20250314103331.png",
     "Work",
-    "Templates/Daily.md",
     "欢迎.md",
     "Tasks Plugin - 查看并检查您的状态 2025-03-12 20-19-29.md",
     "Daily",
