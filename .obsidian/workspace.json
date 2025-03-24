@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily/2025-03-20.md",
+                "file": "Work/Loss Settings.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-03-20"
+              "title": "Loss Settings"
+            }
+          },
+          {
+            "id": "d3cf891a18061d23",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Family Guy/Family Guy.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Family Guy"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -190,17 +205,20 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "63080a25d9a4eef5",
+  "active": "c9ffc70f1fe68796",
   "lastOpenFiles": [
-    "Daily/2025-03-13.md",
-    "Daily/2025-03-14.md",
+    "Daily/2025-03-17.md",
     "Daily/2025-03-16.md",
+    "Daily/2025-03-18.md",
+    "Daily/2025-03-22.md",
     "Daily/2025-03-20.md",
     "Daily/2025-03-19.md",
-    "Daily/2025-03-18.md",
-    "Daily/2025-03-17.md",
-    "README.md",
+    "Family Guy/Family Guy.md",
     "Work/Loss Settings.md",
+    "Family Guy",
+    "Daily/2025-03-13.md",
+    "Daily/2025-03-14.md",
+    "README.md",
     "Pasted image 20250316093347.png",
     "Templates/Daily.md",
     "Daily/2025-03-12.md",
