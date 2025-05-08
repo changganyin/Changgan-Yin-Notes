@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e82804441675ed57",
+        "id": "bf71677af381237c",
         "type": "tabs",
         "children": [
           {
-            "id": "3a03a74e125a5447",
+            "id": "78cca7a7eb811aa9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Work/Problems.md",
+                "file": "Study/计算方法公式总结.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Problems"
+              "title": "计算方法公式总结"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "4a0a3201391eac00",
@@ -191,19 +190,22 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "3a03a74e125a5447",
+  "active": "78cca7a7eb811aa9",
   "lastOpenFiles": [
+    "Life/Family Guy.md",
+    "Study/计算方法公式总结.md",
+    "Study",
+    "Life",
+    "Work/Problems.md",
     "Pasted image 20250412195420.png",
     "Pasted image 20250412193642.png",
     "Pasted image 20250412193418.png",
-    "Work/Problems.md",
     "Pasted image 20250412192722.png",
     "Pasted image 20250412192537.png",
     "Pasted image 20250412185139.png",
     "README.md",
     "Pasted image 20250412152947.png",
     "Work/Loss Settings.md",
-    "Family Guy/Family Guy.md",
     "Work/FigStep.md",
     "Pasted image 20250406135313.png",
     "Daily/2025-04-06.md",
