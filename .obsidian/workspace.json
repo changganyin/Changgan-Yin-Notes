@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Study/计算方法公式总结.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "计算方法公式总结"
             }
           }
         ]
@@ -192,6 +192,7 @@
   },
   "active": "78cca7a7eb811aa9",
   "lastOpenFiles": [
+    "README.md",
     "Study/计算方法公式总结.md",
     "未命名.md",
     "Life/Family Guy.md",
@@ -204,7 +205,6 @@
     "Pasted image 20250412192722.png",
     "Pasted image 20250412192537.png",
     "Pasted image 20250412185139.png",
-    "README.md",
     "Pasted image 20250412152947.png",
     "Work/Loss Settings.md",
     "Work/FigStep.md",
