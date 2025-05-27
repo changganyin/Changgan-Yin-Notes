@@ -1,2 +1,1 @@
 imap jj <Esc>
-set timeoutlen=1000

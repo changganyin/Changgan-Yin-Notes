@@ -1,4 +1,9 @@
 {
   "blue-topaz-theme@@color-scheme-options": "color-scheme-options-topaz-nord",
-  "blue-topaz-theme@@font-monospace-theme": "'Maple Mono NF CN', 'JetBrains Mono', Consolas, Monaco, '等距更纱黑体 SC', 'Source Han Mono', 'Microsoft Yahei Mono', 'Segoe UI Emoji', 'Microsoft YaHei', 'Source Code Pro', monospace"
+  "blue-topaz-theme@@font-text-theme": "'Maple Mono NF CN', Bookerly,'Inter', 'Segoe UI','霞鹜文楷 GB', 'LXGW WenKai', 'Segoe UI Emoji',var(--font-interface)",
+  "blue-topaz-theme@@font-monospace-theme": "'Maple Mono NF CN', 'JetBrains Mono', Consolas, Monaco, '等距更纱黑体 SC', 'Source Han Mono', 'Microsoft Yahei Mono', 'Segoe UI Emoji', 'Microsoft YaHei', 'Source Code Pro', monospace",
+  "blue-topaz-theme@@font-family-tag": "'Maple Mono NF CN', Bookerly, 'Microsoft YaHei', STzhongsong, STSong, 'Segoe UI Emoji', Serif",
+  "blue-topaz-theme@@font-family-strong": "'Maple Mono NF CN', Bookerly,'Inter', 'Segoe UI', 'LXGW WenKai Screen', 'LXGW WenKai Screen R', '霞鹜文楷 GB', 'LXGW WenKai', 'Segoe UI Emoji', var(--font-interface)",
+  "blue-topaz-theme@@font-family-folder-file-title": "'Maple Mono NF CN', Arlrdbd, 'Source Han Sans', 'Noto Sans CJK', 'Source Sans Pro', 'Segoe UI Emoji', sans-serif",
+  "blue-topaz-theme@@font-family-vault": "'Maple Mono NF CN', 'Lucida Handwriting', 'Segoe UI Emoji'"
 }
