@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "f3a8410601d71343",
+        "id": "e9b1d4244f11d3db",
         "type": "tabs",
         "children": [
           {
-            "id": "c99a35754fc574a3",
+            "id": "19ddb252edfd10f9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Study/计算方法公式总结.md",
+                "file": "Work/攻击记录.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "计算方法公式总结"
-            }
-          },
-          {
-            "id": "8ade77c5251184a0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Study/组原 第四次作业.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "组原 第四次作业"
+              "title": "攻击记录"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -93,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "4a0a3201391eac00",
@@ -205,22 +191,23 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "d7c14dd428eb41c3",
+  "active": "19ddb252edfd10f9",
   "lastOpenFiles": [
-    "Study/计算方法公式总结.md",
-    "Study/组原 第四次作业.md",
-    "Work/2025.05.24.md",
+    "4 1.png",
+    "Work/攻击记录.md",
+    "3 1.png",
+    "2 1.png",
+    "1 1.png",
+    "0 1.png",
     "Work/Loss Settings.md",
-    "Pasted image 20250525094856.png",
-    "Pasted image 20250525094602.png",
-    "Pasted image 20250525093757.png",
-    "Pasted image 20250525093150.png",
-    "Pasted image 20250525091724.png",
-    "Pasted image 20250525091633.png",
-    "Pasted image 20250525091548.png",
-    "Pasted image 20250525091534.png",
-    "Pasted image 20250524234957.png",
-    "Pasted image 20250524234906.png",
+    "4.png",
+    "3.png",
+    "2.png",
+    "1.png",
+    "0.png",
+    "Study/组原 第四次作业.md",
+    "Study/计算方法公式总结.md",
+    "Work/2025.05.24.md",
     "新建 Microsoft Word 文档.docx",
     "Study/计算机组成原理0521.md",
     "Work/Problems.md",
