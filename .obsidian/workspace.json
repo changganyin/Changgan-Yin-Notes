@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "638dacbf5ca96a8c",
+        "id": "0487754c983c032a",
         "type": "tabs",
         "children": [
           {
-            "id": "4fd2cb5497b10e08",
+            "id": "1af71dfc6c98d1ee",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Work/Adversarial attack/DeepSeek-VL2/Short text/攻击记录 Short text.md",
+                "file": "Work/Jailbreak/Visual-Adversarial-Examples-Jailbreak-Large-Language-Models/MiniGPT/VAEJLLM eval.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "攻击记录 Short text"
+              "title": "VAEJLLM eval"
             }
           }
         ]
@@ -190,37 +190,42 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "4fd2cb5497b10e08",
+  "active": "1af71dfc6c98d1ee",
   "lastOpenFiles": [
-    "Work/Adversarial attack/DeepSeek-VL2/Short text/Pasted image 20250604131600.png",
-    "Work/Adversarial attack/DeepSeek-VL2/Short text/攻击记录 Short text.md",
-    "Work/Adversarial attack/DeepSeek-VL2/Long text/攻击记录 Long text.md",
-    "Work/Adversarial attack/DeepSeek-VL2/Long text/Pasted image 20250529104800.png",
-    "Work/Adversarial attack/DeepSeek-VL2/Short text/Pasted image 20250604131603.png",
-    "Work/Adversarial attack/DeepSeek-VL2/Short text/Pasted image 20250604131602.png",
-    "Work/Adversarial attack/DeepSeek-VL2/Short text/Pasted image 20250604131601.png",
-    "Work/Adversarial attack/DeepSeek-VL2/Short text/Pasted image 20250604131609.png",
-    "Work/Adversarial attack/DeepSeek-VL2/Short text/Pasted image 20250604131608.png",
-    "Work/Adversarial attack/DeepSeek-VL2/Short text/Pasted image 20250604131607.png",
-    "Work/Adversarial attack/DeepSeek-VL2/Short text/Pasted image 20250604131606.png",
-    "Work/Adversarial attack/DeepSeek-VL2/Short text/Pasted image 20250604131605.png",
+    "Work/Jailbreak/Visual-Adversarial-Examples-Jailbreak-Large-Language-Models/MiniGPT/VAEJLLM eval 1.md",
+    "Work/Jailbreak/Visual-Adversarial-Examples-Jailbreak-Large-Language-Models/MiniGPT/VAEJLLM eval.md",
+    "Pictures/Pasted image 20250606121156.png",
+    "Pictures/Pasted image 20250606121023.png",
+    "Pictures/Pasted image 20250606110345.png",
+    "Work/Jailbreak/Visual-Adversarial-Examples-Jailbreak-Large-Language-Models",
+    "Work/Jailbreak/Visual-Adversarial-Examples-Jailbreak-Large-Language-Models/MiniGPT",
+    "Work/Jailbreak",
+    "Work/Adversarial attack/Attack Bard",
+    "Study/组原 第 6 次作业.md",
+    "Pictures/Pasted image 20250605195456.png",
+    "Pictures/Pasted image 20250605195444.png",
+    "Pictures/Pasted image 20250605195335.png",
+    "Pictures/Pasted image 20250605195213.png.png",
+    "Pictures/Pasted image 20250605194723.png.png",
+    "Study/计算方法公式总结.md",
+    "README.md",
+    "Pictures/Pasted image 20250605193916.png",
+    "Pictures/Pasted image 20250314103331.png",
+    "Study/组原 第 4 次作业.md",
+    "Study/组原 第 5 次作业.md",
+    "Work/Adversarial attack/Attack Bard/DeepSeek-VL2/Short text/攻击记录 Short text.md",
+    "Work/Adversarial attack/Attack Bard/DeepSeek-VL2/Long text/攻击记录 Long text.md",
     "Work/Problems.md",
     "Work/Loss Settings.md",
     "Work/2025.05.24.md",
-    "Work/Adversarial attack/DeepSeek-VL2/Short text",
-    "Study/计算方法公式总结.md",
-    "Study/组原 第四次作业.md",
+    "Work/Adversarial attack/Attack Bard/DeepSeek-VL2/Short text",
     "Pictures",
-    "Work/Adversarial attack/DeepSeek-VL2/Long text",
-    "Work/Adversarial attack/DeepSeek-VL2",
+    "Work/Adversarial attack/Attack Bard/DeepSeek-VL2/Long text",
+    "Work/Adversarial attack/Attack Bard/DeepSeek-VL2",
     "Work/Adversarial attack",
-    "Study/组原 第五次作业.md",
-    "README.md",
     "新建 Microsoft Word 文档.docx",
     "Study/计算机组成原理0521.md",
     "Life/Family Guy.md",
-    "Study",
-    "Life",
     "Work/FigStep.md",
     "Daily/2025-04-06.md",
     "Daily/2025-03-12.md",
@@ -231,11 +236,7 @@
     "Daily/2025-03-22.md",
     "Daily/2025-03-16.md",
     "Daily/2025-03-18.md",
-    "Family Guy",
     "Daily/2025-03-14.md",
-    "Templates/Daily.md",
-    "Work",
-    "欢迎.md",
-    "Tasks Plugin - 查看并检查您的状态 2025-03-12 20-19-29.md"
+    "Templates/Daily.md"
   ]
 }
