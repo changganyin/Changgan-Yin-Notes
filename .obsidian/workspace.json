@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "0487754c983c032a",
+        "id": "5bb07b55c6c42b4e",
         "type": "tabs",
         "children": [
           {
-            "id": "1af71dfc6c98d1ee",
+            "id": "b2dd141aeefd9850",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Work/Jailbreak/Visual-Adversarial-Examples-Jailbreak-Large-Language-Models/MiniGPT/VAEJLLM eval.md",
+                "file": "Study/组原 第 7 次作业.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "VAEJLLM eval"
+              "title": "组原 第 7 次作业"
             }
           }
         ]
@@ -190,10 +190,18 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "1af71dfc6c98d1ee",
+  "active": "b2dd141aeefd9850",
   "lastOpenFiles": [
-    "Work/Jailbreak/Visual-Adversarial-Examples-Jailbreak-Large-Language-Models/MiniGPT/VAEJLLM eval 1.md",
+    "Pictures/Pasted image 20250613113620.png",
+    "Study/组原 第 6 次作业.md",
+    "Pictures/Pasted image 20250613110201.png",
+    "Study/组原 第 7 次作业.md",
+    "Study/组原 第 5 次作业.md",
+    "Study/CET6.md",
+    "Work/Jailbreak/Visual-Adversarial-Examples-Jailbreak-Large-Language-Models/MiniGPT/20250608.md",
+    "Work/20250524.md",
     "Work/Jailbreak/Visual-Adversarial-Examples-Jailbreak-Large-Language-Models/MiniGPT/VAEJLLM eval.md",
+    "Work/Jailbreak/Visual-Adversarial-Examples-Jailbreak-Large-Language-Models/MiniGPT/VAEJLLM eval 1.md",
     "Pictures/Pasted image 20250606121156.png",
     "Pictures/Pasted image 20250606121023.png",
     "Pictures/Pasted image 20250606110345.png",
@@ -201,7 +209,6 @@
     "Work/Jailbreak/Visual-Adversarial-Examples-Jailbreak-Large-Language-Models/MiniGPT",
     "Work/Jailbreak",
     "Work/Adversarial attack/Attack Bard",
-    "Study/组原 第 6 次作业.md",
     "Pictures/Pasted image 20250605195456.png",
     "Pictures/Pasted image 20250605195444.png",
     "Pictures/Pasted image 20250605195335.png",
@@ -209,15 +216,11 @@
     "Pictures/Pasted image 20250605194723.png.png",
     "Study/计算方法公式总结.md",
     "README.md",
-    "Pictures/Pasted image 20250605193916.png",
-    "Pictures/Pasted image 20250314103331.png",
     "Study/组原 第 4 次作业.md",
-    "Study/组原 第 5 次作业.md",
     "Work/Adversarial attack/Attack Bard/DeepSeek-VL2/Short text/攻击记录 Short text.md",
     "Work/Adversarial attack/Attack Bard/DeepSeek-VL2/Long text/攻击记录 Long text.md",
     "Work/Problems.md",
     "Work/Loss Settings.md",
-    "Work/2025.05.24.md",
     "Work/Adversarial attack/Attack Bard/DeepSeek-VL2/Short text",
     "Pictures",
     "Work/Adversarial attack/Attack Bard/DeepSeek-VL2/Long text",
@@ -233,10 +236,6 @@
     "Daily/2025-03-17.md",
     "Daily/2025-03-19.md",
     "Daily/2025-03-20.md",
-    "Daily/2025-03-22.md",
-    "Daily/2025-03-16.md",
-    "Daily/2025-03-18.md",
-    "Daily/2025-03-14.md",
-    "Templates/Daily.md"
+    "Daily/2025-03-22.md"
   ]
 }
