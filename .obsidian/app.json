@@ -1,6 +1,6 @@
 {
   "useTab": false,
-  "vimMode": true,
+  "vimMode": false,
   "promptDelete": false,
   "alwaysUpdateLinks": true,
   "pdfExportSettings": {
