@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "7005a3395b26b846",
+        "id": "91db9e4630eec848",
         "type": "tabs",
         "children": [
           {
-            "id": "fccdb3c0eeb46856",
+            "id": "f9f6ca444b39cc34",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Study/计算方法公式总结.md",
+                "file": "Study/计算机网络安全实验.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "计算方法公式总结"
-            }
-          },
-          {
-            "id": "30cebb4915bdb457",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Study/操作系统原理实验.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "操作系统原理实验"
+              "title": "计算机网络安全实验"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -93,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 417.5,
-    "collapsed": true
+    "width": 417.5
   },
   "right": {
     "id": "4a0a3201391eac00",
@@ -207,21 +191,25 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "30cebb4915bdb457",
+  "active": "0dfbce28b3700532",
   "lastOpenFiles": [
+    "Pictures/Pasted image 20251223220019.png",
+    "Pictures/Pasted image 20251223215816.png",
+    "Pictures/Pasted image 20251223214936.png",
+    "Pictures/Pasted image 20251223214507.png",
+    "Pictures/Pasted image 20251223214418.png",
+    "Pictures/Pasted image 20251223214152.png",
     "Study/计算方法公式总结.md",
+    "Pictures/Pasted image 20251223211657.png",
+    "Study/计算机网络安全实验.md",
+    "Pictures/Pasted image 20251223213550.png",
+    "Pictures/Pasted image 20251223213045.png",
+    "Pictures/Pasted image 20251223212538.png",
+    "Study/傅里叶变换.md",
+    "Study/系统安全实验.md",
     "Study/操作系统原理实验.md",
     "Pictures/Pasted image 20251223154600.png",
-    "Pictures/Pasted image 20251223154530.png",
-    "Pictures/Pasted image 20251223154452.png",
-    "Pictures/Pasted image 20251223154415.png",
-    "Pictures/Pasted image 20251223154345.png",
-    "Pictures/Pasted image 20251223154235.png",
-    "Pictures/Pasted image 20251223153920.png",
-    "32462f31b0791d91cacd2921be97c3a9.png",
     "README.md",
-    "Study/系统安全实验.md",
-    "Study/傅里叶变换.md",
     "Study/CET6.md",
     "Study/组原 第 4 次作业.md",
     "Life/WOWS 账户.md",
@@ -229,8 +217,6 @@
     "未命名 1.base",
     "Life/IOS 账户.md",
     "Work/20251109.md",
-    "Pictures/Pasted image 20251109211549.png",
-    "Pictures/Pasted image 20251109211725.png",
     "Work/20251102.md",
     "Work/20250921/test.md",
     "Work/20250921/gpt4o.md",
@@ -247,7 +233,6 @@
     "Work/20250917/low_level.md",
     "Work/20250917/high_level_big.md",
     "Work/20250825.md",
-    "Work/20250910/image_high_level.md",
     "Work/20250910",
     "Work/know_model",
     "Work/20250907",
