@@ -161,6 +161,7 @@ mycli.c: Line 161, `sudo route add -net 192.168.60.0/24 tun0`
 王婆卖瓜
 
 ### 相关代码
+重要代码：mycli.c & myser.c
 - mycli.c
 1. 连接与初始化: `setupTLSClient` 初始化 OpenSSL 上下文并加载 CA 证书用于验证服务器；`setupTCPClient` 创建 TCP 套接字并连接服务器；随后通过 `SSL_connect` 完成 TLS 握手
 2. 身份认证: 握手成功后，客户端通过 `SSL_write` 依次发送用户名、密码以及申请的虚拟 IP 后缀（`last_ip`）给服务器进行验证
