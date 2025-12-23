@@ -4,67 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "9d5ed953eb4a3e57",
+        "id": "7005a3395b26b846",
         "type": "tabs",
         "children": [
           {
-            "id": "7c5e3dc774b542a6",
+            "id": "fccdb3c0eeb46856",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "high_level_1.md",
+                "file": "Study/计算方法公式总结.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "high_level_1"
+              "title": "计算方法公式总结"
             }
           },
           {
-            "id": "c155ef61b1568143",
+            "id": "30cebb4915bdb457",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "high_level_2.md",
+                "file": "Study/操作系统原理实验.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "high_level_2"
-            }
-          },
-          {
-            "id": "34af627c3d27fd7d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "low_level_1.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "low_level_1"
-            }
-          },
-          {
-            "id": "54b7f8e8f26891c7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "low_level_2.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "low_level_2"
+              "title": "操作系统原理实验"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -121,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 417.5
+    "width": 417.5,
+    "collapsed": true
   },
   "right": {
     "id": "4a0a3201391eac00",
@@ -234,12 +207,37 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "54b7f8e8f26891c7",
+  "active": "30cebb4915bdb457",
   "lastOpenFiles": [
-    "low_level_1.md",
-    "low_level_2.md",
-    "high_level_2.md",
-    "high_level_1.md",
+    "Study/计算方法公式总结.md",
+    "Study/操作系统原理实验.md",
+    "README.md",
+    "Study/系统安全实验.md",
+    "Study/傅里叶变换.md",
+    "Study/CET6.md",
+    "Study/组原 第 4 次作业.md",
+    "Life/WOWS 账户.md",
+    "未命名.base",
+    "未命名 1.base",
+    "Life/IOS 账户.md",
+    "Work/20251109.md",
+    "Pictures/Pasted image 20251109211549.png",
+    "Pictures/Pasted image 20251109211725.png",
+    "Pictures/Pasted image 20251109211639.png",
+    "Pictures/Pasted image 20251109211616.png",
+    "loss_curve.png",
+    "Pictures/000000002769.jpg",
+    "Work/20251102.md",
+    "Pictures/Pasted image 20251101204013.png",
+    "Work/20250921/test.md",
+    "Work/20250921/gpt4o.md",
+    "Work/20250921/qwen.md",
+    "Work/20250921/llava-1.0.md",
+    "Work/20250921/high_level_1.md",
+    "Work/20250921/low_level_2.md",
+    "Work/20250921",
+    "Work/20250921/low_level_1.md",
+    "Work/20250921/high_level_2.md",
     "Work/20250917/high_level.md",
     "Work/20250917/low_level_big.md",
     "Work/20250917",
@@ -249,38 +247,13 @@
     "Work/20250910/image_high_level.md",
     "Work/20250910/image_low_level.md",
     "Work/20250910",
-    "Work/20250910/image_high_level_big.md",
-    "Work/know_model/image_high_level.md",
-    "Work/know_model/image_low_level_downsample.md",
-    "Work/know_model/image_low_level_system_prompt.md",
     "Work/know_model",
-    "Work/know_model/image_low_level.md",
-    "Work/know_model/image_high_level_downsample.md",
-    "Work/know_model/image_high_level_system_prompt.md",
-    "Work/20250907/low_level.md",
-    "Work/20250907/low_level_big.md",
     "Work/20250907",
-    "Work/20250907/high_level.md",
-    "Work/20250907/high_level_big.md",
-    "Work/20250904/0-0.md",
-    "Work/20250904/1-4.md",
     "Work/20250904",
-    "Work/20250904/1-3.md",
-    "Work/20250904/1-2.md",
     "Work/20250903",
     "测试结果.7z",
-    "Work/Adversarial attack/End2End",
-    "Work/Adversarial attack/Activation attack/old",
-    "hijack_one_prompt_image",
     "Pictures/Pasted image 20250613113620.png",
     "Pictures/Pasted image 20250613110201.png",
-    "Pictures/Pasted image 20250606121156.png",
-    "Pictures/Pasted image 20250606121023.png",
-    "Pictures/Pasted image 20250606110345.png",
-    "Pictures/Pasted image 20250605195456.png",
-    "Pictures/Pasted image 20250605195444.png",
-    "Pictures/Pasted image 20250605195335.png",
-    "Pictures/Pasted image 20250605195213.png.png",
-    "Pictures/Pasted image 20250605194723.png.png"
+    "Pictures/Pasted image 20250606121156.png"
   ]
 }
