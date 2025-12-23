@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Study/Network Security.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Network Security"
+              "title": "README"
             }
           }
         ]
@@ -192,10 +192,11 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "0dfbce28b3700532",
+  "active": "715b4203cf2f867a",
   "lastOpenFiles": [
-    "Study/Operating System.md",
+    "Daily Notes/2025/12-Dec/2025-12-23.md",
     "Study/Network Security.md",
+    "Study/Operating System.md",
     "Study/Computational Methods.md",
     "Study/System Safety.md",
     "Images/Pasted image 20251223153920.png",
@@ -209,7 +210,6 @@
     "Images/Pasted image 20251223212538.png",
     "Images/Pasted image 20251223213045.png",
     "Images",
-    "Daily Notes/2025/12-Dec/2025-12-23.md",
     "Templates/DailyNoteTemplate.md",
     "Daily Notes/2025/12-Dec",
     "Daily Notes/2025",
