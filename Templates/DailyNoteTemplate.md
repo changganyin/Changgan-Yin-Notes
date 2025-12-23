@@ -63,7 +63,7 @@ style: primary
 label: Push Unfinished to TODAY
 action:
   type: js
-  file: zzScripts/move-tasks.js
+  file: Scripts/move-tasks.js
   args:
     buttonClick: true
 ```

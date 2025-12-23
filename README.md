@@ -1,4 +1,4 @@
-**Here are my obsidian notes.**
+**Here are Changgan Yin's notes.**
 
 - [x] sync on Windows 11 through Obsidian Git
 
