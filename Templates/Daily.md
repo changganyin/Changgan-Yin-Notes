@@ -1,8 +1,0 @@
----
-date: 
----
-# Study
-
-# Life
-
-# Others

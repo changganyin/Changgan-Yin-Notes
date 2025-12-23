@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "91db9e4630eec848",
+        "id": "7a457bf0948299d5",
         "type": "tabs",
         "children": [
           {
-            "id": "f9f6ca444b39cc34",
+            "id": "715b4203cf2f867a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Study/计算机网络安全实验.md",
+                "file": "Study/Network Security.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "计算机网络安全实验"
+              "title": "Network Security"
             }
           }
         ]
@@ -44,7 +44,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "文件列表"
+              "title": "Files"
             }
           },
           {
@@ -180,64 +180,64 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:创建新数据库": false,
-      "daily-notes:打开/创建今天的日记": false,
-      "switcher:打开快速切换": false,
-      "graph:查看关系图谱": false,
-      "canvas:新建白板": false,
-      "templates:插入模板": false,
-      "command-palette:打开命令面板": false,
-      "workspaces:管理工作区布局": false,
-      "obsidian-git:Open Git source control": false
+      "daily-notes:Open today's daily note": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "workspaces:Manage workspace layouts": false,
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false,
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "0dfbce28b3700532",
+  "active": "715b4203cf2f867a",
   "lastOpenFiles": [
-    "Pictures/Pasted image 20251223220019.png",
-    "Pictures/Pasted image 20251223215816.png",
-    "Pictures/Pasted image 20251223214936.png",
-    "Pictures/Pasted image 20251223214507.png",
-    "Pictures/Pasted image 20251223214418.png",
-    "Pictures/Pasted image 20251223214152.png",
-    "Study/计算方法公式总结.md",
-    "Pictures/Pasted image 20251223211657.png",
-    "Study/计算机网络安全实验.md",
-    "Pictures/Pasted image 20251223213550.png",
-    "Pictures/Pasted image 20251223213045.png",
-    "Pictures/Pasted image 20251223212538.png",
-    "Study/傅里叶变换.md",
-    "Study/系统安全实验.md",
-    "Study/操作系统原理实验.md",
-    "Pictures/Pasted image 20251223154600.png",
-    "README.md",
-    "Study/CET6.md",
-    "Study/组原 第 4 次作业.md",
-    "Life/WOWS 账户.md",
-    "未命名.base",
-    "未命名 1.base",
-    "Life/IOS 账户.md",
+    "Study/Operating System.md",
+    "Study/Network Security.md",
+    "Study/Computational Methods.md",
+    "Study/System Safety.md",
+    "Images/Pasted image 20251223153920.png",
+    "Images/Pasted image 20251223154235.png",
+    "Images/Pasted image 20251223154345.png",
+    "Images/Pasted image 20251223154415.png",
+    "Images/Pasted image 20251223154452.png",
+    "Images/Pasted image 20251223154530.png",
+    "Images/Pasted image 20251223154600.png",
+    "Images/Pasted image 20251223211657.png",
+    "Images/Pasted image 20251223212538.png",
+    "Images/Pasted image 20251223213045.png",
+    "Images",
+    "Daily Notes/2025/12-Dec/2025-12-23.md",
+    "Templates/DailyNoteTemplate.md",
+    "Daily Notes/2025/12-Dec",
+    "Daily Notes/2025",
     "Work/20251109.md",
     "Work/20251102.md",
-    "Work/20250921/test.md",
-    "Work/20250921/gpt4o.md",
-    "Work/20250921/qwen.md",
-    "Work/20250921/llava-1.0.md",
-    "Work/20250921/high_level_1.md",
-    "Work/20250921/low_level_2.md",
-    "Work/20250921",
-    "Work/20250921/low_level_1.md",
-    "Work/20250921/high_level_2.md",
-    "Work/20250917/high_level.md",
-    "Work/20250917/low_level_big.md",
-    "Work/20250917",
-    "Work/20250917/low_level.md",
-    "Work/20250917/high_level_big.md",
-    "Work/20250825.md",
-    "Work/20250910",
-    "Work/know_model",
-    "Work/20250907",
-    "Work/20250904",
-    "Work/20250903",
-    "测试结果.7z"
+    "Work/20250524.md",
+    "Study/傅里叶变换.md",
+    "Templates/WeeklyNoteTemplate.md",
+    "README.md",
+    "Daily Notes/2025/Weeks/Week 52 (Dec 21-Dec 27, 2025).md",
+    "Daily Notes/2025/Weeks",
+    "Daily Notes/2025/Weeks/Week null (Mar 18-Mar 24, 2001).md",
+    "Untitled.md",
+    "2025-12-22.md",
+    "Daily Notes/2025/12/2025-12-23.md",
+    "Daily Notes/2025/12-12月/2025-12-23.md",
+    "Daily Notes/2025/12",
+    "Daily Notes/2025/12-12月",
+    "Templates/Daily.md",
+    "Daily/2025-12-23.md",
+    "Templates",
+    "Scripts/move-tasks.js",
+    "Scripts",
+    "Life/WOWS Accounts.md",
+    "Life/Family Guy.md",
+    "Life/IOS Accounts.md",
+    "Daily/2025-03-22.md",
+    "Daily/2025-03-20.md",
+    "未命名.base"
   ]
 }
