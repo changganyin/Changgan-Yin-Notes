@@ -79,37 +79,48 @@ SORT completed DESC, due ASC
 ## :LiTrophy: Wins
 
 \`\`\`dataview
-LIST Win
+LIST L.Win
 FROM "Daily Notes"
-WHERE file.frontmatter.week-number = this.summary-week-number AND date(file.name).year = this.summary-year
-SORT file.link
+FLATTEN file.lists AS L
+WHERE file.frontmatter.week-number = this.summary-week-number 
+  AND date(file.name).year = this.summary-year
+  AND L.Win
+SORT file.link ASC
 \`\`\`
 
 ## :LiBrain: Lessons Learned
 
 \`\`\`dataview
-LIST Learned
+LIST L.Learned
 FROM "Daily Notes"
-WHERE file.frontmatter.week-number = this.summary-week-number AND date(file.name).year = this.summary-year
-SORT file.link
+FLATTEN file.lists AS L
+WHERE file.frontmatter.week-number = this.summary-week-number 
+  AND date(file.name).year = this.summary-year
+  AND L.Learned
+SORT file.link ASC
 \`\`\`
 
 ## :LiSquirrel: Distractions
 
 \`\`\`dataview
-LIST Distraction
+LIST L.Distraction
 FROM "Daily Notes"
-WHERE file.frontmatter.week-number = this.summary-week-number AND date(file.name).year = this.summary-year
-SORT file.link
+FLATTEN file.lists AS L
+WHERE file.frontmatter.week-number = this.summary-week-number 
+  AND date(file.name).year = this.summary-year
+  AND L.Distraction
+SORT file.link ASC
 \`\`\`
 
 ## :LiHeartHandshake: Gratitude
 
 \`\`\`dataview
-LIST Gratitude
+LIST L.Gratitude
 FROM "Daily Notes"
+FLATTEN file.lists AS L
 WHERE file.frontmatter.week-number = this.summary-week-number AND date(file.name).year = this.summary-year
-SORT file.link
+WHERE L.Gratitude
+SORT file.link ASC
 \`\`\`
 `;
 %>

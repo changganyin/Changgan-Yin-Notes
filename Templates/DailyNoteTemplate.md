@@ -69,16 +69,16 @@ action:
 ```
 ---
 ### :LiTrophy: Wins
-- 
+- Win:: 
 
 ### :LiBrain: Learned
-- 
+- Learned:: 
 
 ### :LiSquirrel: Distractions
-- 
+- Distraction:: 
 
 ### :LiHeartHandshake: Gratitude
-- 
+- Gratitude:: 
 
 ---
 ## :LiFilePlus2: Notes created today
