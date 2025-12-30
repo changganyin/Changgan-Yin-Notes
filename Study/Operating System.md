@@ -1167,4 +1167,402 @@ int main() {
 
 ## 实验四
 ### task_1 编写一个 Linux 内核模块，并完成模块的安装/卸载等操作
+- Makefile
+```makefile
+# 动态获取当前运行的内核版本
+KVER := $(shell uname -r)
 
+# 自动指向对应的内核构建目录
+KDIR := /lib/modules/$(KVER)/build
+
+PWD := $(shell pwd)
+
+# 指定目标文件
+obj-m := ycg.o
+
+# 默认编译动作
+all:
+        make -C $(KDIR) M=$(PWD) modules
+
+# 清理编译生成的文件
+clean:
+        make -C $(KDIR) M=$(PWD) clean
+```
+- ycg.c
+```C
+#include <linux/init.h>
+#include <linux/module.h>
+#include <linux/moduleparam.h>
+
+static char *name = "changganyin";
+static int times = 1;
+
+// 接收命令行参数
+module_param(times, int, 0644);
+module_param(name, charp, 0644);
+
+static int hello_init(void)
+{
+    int i;
+    for(i = 0 ; i < times; i++)
+        printk(KERN_ALERT "(%d) hello, %s!\n", i, name);
+    return 0;
+}
+
+static void hello_exit(void)
+{
+    printk(KERN_ALERT "Goodbye, %s!\n", name);
+}
+
+MODULE_LICENSE("Dual BSD/GPL");
+module_init(hello_init);
+module_exit(hello_exit);
+```
+代码逻辑：
+- 定义两个全局变量 `name` 和 `times`，并用`module_param` 宏将这两个变量声明为模块参数
+- 循环体内，调用内核日志函数 `printk`（级别为 `KERN_ALERT`），多次打印带有 `name` 变量的问候语
+
+
+模块的安装和卸载
+```bash
+make # 编译
+sudo insmod ycg.ko name="ycg" times=7 # 安装模块
+
+sudo rmmod ycg # 卸载模块
+```
+
+*task_1 截图*
+![[Pasted image 20251230144542.png]]
+![[Pasted image 20251230144918.png]]
+
+### task_2 在 Linux 平台编写一个字符设备的驱动程序和测试用的应用程序
+- ycgDrive.c
+```C
+#include <linux/module.h>
+#include <linux/kernel.h>
+#include <linux/fs.h>
+#include <linux/cdev.h>
+#include <linux/string.h>
+#include <linux/uaccess.h>
+#include <linux/types.h>
+
+static struct cdev drv;
+static dev_t ndev;
+static char ycg[32]; 
+
+static int drv_open(struct inode *nd, struct file *fp) 
+{
+    int major = MAJOR(nd->i_rdev);
+    int minor = MINOR(nd->i_rdev);
+    printk(KERN_EMERG "ycgDrive: open, major = %d, minor = %d\n", major, minor);
+    return 0;
+}
+
+static ssize_t drv_read(struct file* fp, char __user* u, size_t sz, loff_t* loff)
+{
+    char res[32];
+    int i = 0;
+    int num1 = 0;
+    int num2 = 0;
+    bool flag = true; // true为加法, false为减法
+    
+    printk(KERN_EMERG "ycgDrive: read operation.\n");
+    
+    // 解析字符串逻辑 (例如 "10+20")，读取 ycg 缓冲区
+    while (ycg[i] != '+' && ycg[i] != '-' && ycg[i] != '\0')
+    {
+        if(ycg[i] >= '0' && ycg[i] <= '9')
+            num1 = 10 * num1 + (ycg[i] - '0');
+        i++;
+    }
+    
+    if (ycg[i] == '-') flag = false;
+    if (ycg[i] == '+' || ycg[i] == '-') i++; // 跳过符号位
+    
+    while (ycg[i] != '\0') 
+    {
+        if(ycg[i] >= '0' && ycg[i] <= '9')
+            num2 = 10 * num2 + (ycg[i] - '0');
+        i++;
+    }
+
+    if (flag == true) 
+    {
+        printk(KERN_EMERG "%d + %d = %d\n", num1, num2, num1 + num2);
+        sprintf(res, "%d + %d = %d\n", num1, num2, num1 + num2);
+    }
+    else
+    {
+        printk(KERN_EMERG "%d - %d = %d\n", num1, num2, num1 - num2);
+        sprintf(res, "%d - %d = %d\n", num1, num2, num1 - num2);
+    }
+    
+    // 将结果复制回用户空间
+    if (copy_to_user(u, res, strlen(res)))
+        return -EFAULT;
+        
+    return 0;
+}
+
+static ssize_t drv_write(struct file* fp, const char __user * u, size_t sz, loff_t* loff){
+    printk(KERN_EMERG "ycgDrive: write operation.\n");
+    // 从用户空间复制数据到内核缓冲区 ycg
+    if (copy_from_user(ycg, u, sz))
+        return -EFAULT;
+    ycg[sz] = '\0'; // 确保字符串结束符
+    return 0;
+}
+
+// 绑定操作函数
+static struct file_operations drv_ops = 
+{
+    .owner  =   THIS_MODULE,
+    .open   =   drv_open,    
+    .read   =   drv_read, 
+    .write  =   drv_write,
+};
+
+static int changganyinDrv_init(void)
+{
+    int ret;
+    cdev_init(&drv, &drv_ops);
+    // 动态申请设备号，设备名为 "ycgDrive"
+    ret = alloc_chrdev_region(&ndev, 0, 1, "ycgDrive");
+    if (ret < 0)
+    {
+        printk(KERN_EMERG "ycgDrive: alloc_chrdev_region error.\n");
+        return ret;
+    }
+    // 打印申请到的主设备号
+    printk(KERN_EMERG "ycgDrive: major = %d, minor = %d\n", MAJOR(ndev), MINOR(ndev));
+    
+    ret = cdev_add(&drv, ndev, 1);
+    if (ret < 0)
+    {
+        printk(KERN_EMERG "ycgDrive: cdev_add error.\n");
+        return ret;
+    }
+    return 0;
+}
+
+static void changganyinDrv_exit(void)
+{
+    printk("ycgDrive: exit process!\n");
+    cdev_del(&drv);
+    unregister_chrdev_region(ndev, 1);
+}
+
+module_init(changganyinDrv_init);
+module_exit(changganyinDrv_exit);
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("YCG");
+```
+代码逻辑：
+- 使用全局内核缓冲区 `ycg[32]` 在 `write` 和 `read` 操作之间传递数据，实现对字符串算式的解析与计算
+- drv_write: 使用 `copy_from_user` 函数，将用户空间传入的算式字符串（如 `"10+20"`）安全地复制到内核空间的全局数组 `ycg` 中，并手动添加字符串结束符 `\0`，为后续读取时的解析做准备
+- drv_read: 通过 `while` 循环遍历 `ycg` 缓冲区中的字符串，把两个数字分别赋值个 `num1` 和 `num2`，使用 `sprintf` 将结果格式化为字符串（如 `"10 + 20 = 30\n"`），最后通过 `copy_to_user` 将计算结果返回给用户空间
+- changganyinDrv_init: 动态分配设备号
+
+- task_2.c
+```C
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <string.h>
+#include <errno.h>
+
+#define CHAR_DEV_NAME "/dev/ycgDrive"
+
+char calc[32];
+char res[32];
+
+int main()
+{
+    int fd;
+    
+    // 打开设备文件
+    fd = open(CHAR_DEV_NAME, O_RDWR);
+    if(fd < 0)
+    {
+        printf("open failed! path: %s\n", CHAR_DEV_NAME);
+        perror("reason");
+        return -1;
+    }
+    
+    printf("Please input calculation (e.g. 1+1 or 10-5): ");
+    scanf("%s", calc);
+    
+    // 1. 写数据给驱动
+    write(fd, calc, strlen(calc));
+    
+    // 2. 从驱动读结果
+    read(fd, res, 32);
+    
+    printf("Result from kernel: %s\n", res);
+    
+    close(fd);
+    return 0;
+}
+```
+- Makefile
+```makefile
+# 动态获取当前内核版本
+KVER := $(shell uname -r)
+KDIR := /lib/modules/$(KVER)/build
+PWD  := $(shell pwd)
+
+obj-m := ycgDrive.o
+
+all:
+	# 编译内核模块
+	make -C $(KDIR) M=$(PWD) modules
+	# 编译测试应用程序
+	gcc -o task_2 task_2.c
+
+clean:
+	make -C $(KDIR) M=$(PWD) clean
+	rm -rf task_2
+```
+
+安装和卸载驱动程序
+```bash
+make # 编译
+sudo insmod ycgDrive.ko # 安装驱动程序
+sudo dmesg | tail -5
+sudo mknod /dev/ycgDrive c 240 0 # 根据上一步的结果
+
+sudo rm -rf /dev/ycgDrive
+sudo rmmod ycgDrive
+sudo dmesg | tail -7
+```
+
+*taask_2 截图*
+![[Pasted image 20251230145821.png]]
+![[Pasted image 20251230150249.png]]
+![[Pasted image 20251230150451.png]]
+
+### task_3 实现 proc 接口，将应用程序和驱动程序的部分交互信息写入proc文件系统，并在应用程序快结束时读出相关文件信息并显示出来
+- ycgDrive2.c
+```C
+#include <stdio.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <fcntl.h>
+
+char src[256];
+char dest[256];
+
+int main() {
+    int length, count;
+    // 打开设备，注意名字改成了 ycgDrive2
+    int fp = open("/dev/ycgDrive2", O_RDWR);
+    if(fp < 0) {
+        printf("Open ycgDrive2 fail. Did you run mknod?\n");
+        return 0;
+    }
+
+    printf("Please write strings (Press Ctrl+D to stop writing):\n");
+    // 循环写入
+    while(scanf("%s", src) != EOF) {
+        length = strlen(src);
+        count = write(fp, src, length);
+        printf("Write to ycgDrive2 %dB\n", count);
+    }
+    
+    // 清除 EOF 状态，为了后面的 scanf 能继续工作 (这是一个小技巧，否则后面的 scanf 会直接跳过)
+    clearerr(stdin); 
+
+    // 重置文件指针到开头
+    printf("\nReset file pointer to beginning...\n");
+    printf("position: %ld\n", lseek(fp, 0, SEEK_SET));
+
+    printf("Please input the bytes to read (Press Ctrl+D to exit):\n");
+    // 循环读取
+    while(scanf("%d", &length) != EOF) {
+        // 读取指定长度
+        count = read(fp, dest, length);
+        if (count > 0) {
+            dest[count] = 0; // 添加字符串结束符
+            printf("Read from ycgDrive2 %dB: %s\n", count, dest);
+        } else {
+            printf("Read 0 bytes (End of Buffer)\n");
+        }
+    }
+    
+    close(fp);
+    return 0;
+}
+```
+代码逻辑：
+- ycgDrive2_llseek: 根据 `whence` 参数（`SEEK_SET` 头、`SEEK_CUR` 当前、`SEEK_END` 尾），计算新的文件指针位置 `newpos`; 修改文件结构体中的 `fp->f_pos`，从而改变下一次读写操作的位置
+- read/write: 将数据从用户空间复制到内核缓冲区。关键在于它会根据当前的**文件指针偏移量 (`*pos`)** 进行写入，并更新文件大小 (`ycgDrive2_size`)；根据当前的**文件指针偏移量**，从内核缓冲区的对应位置读取数据返回给用户
+
+- task_3.c
+```C
+#include <stdio.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <fcntl.h>
+
+char src[256];
+char dest[256];
+
+int main() {
+    int length, count;
+    int fp = open("/dev/ycgDrive2", O_RDWR);
+    if(fp < 0) {
+        printf("Open ycgDrive2 fail. Did you run mknod?\n");
+        return 0;
+    }
+
+    printf("Please write strings (Press Ctrl+D to stop writing):\n");
+    // 循环写入
+    while(scanf("%s", src) != EOF) {
+        length = strlen(src);
+        count = write(fp, src, length);
+        printf("Write to ycgDrive2 %dB\n", count);
+    }
+    
+    // 清除 EOF 状态，为了后面的 scanf 能继续工作 (这是一个小技巧，否则后面的 scanf 会直接跳过)
+    clearerr(stdin); 
+
+    // 重置文件指针到开头
+    printf("\nReset file pointer to beginning...\n");
+    printf("position: %ld\n", lseek(fp, 0, SEEK_SET));
+
+    printf("Please input the bytes to read (Press Ctrl+D to exit):\n");
+    // 循环读取
+    while(scanf("%d", &length) != EOF) {
+        // 读取指定长度
+        count = read(fp, dest, length);
+        if (count > 0) {
+            dest[count] = 0; // 添加字符串结束符
+            printf("Read from ycgDrive2 %dB: %s\n", count, dest);
+        } else {
+            printf("Read 0 bytes (End of Buffer)\n");
+        }
+    }
+    
+    close(fp);
+    return 0;
+}
+```
+
+安装和卸载
+```bash
+make # 编译
+sudo insmod ycgDrive2.ko
+sudo mknod /dev/ycgDrive2 c 222 0
+sudo ./task_3
+
+sudo rm /dev/ycgDrive2
+sudo rmmod ycgDrive2
+```
+
+*task_3 截图*
+![[Pasted image 20251230151345.png]]
