@@ -820,3 +820,351 @@ gcc task_6_gui.c -o task_6_gui -lpthread -lncurses
 
 非死锁：
 ![[Pasted image 20251223154530.png]]
+
+## 实验三
+### task_1 Linux模拟实现 OPT, FIFO, LRU 等淘汰算法
+task_1.cpp
+```cpp
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+#include <algorithm>
+#include <cstdlib>
+#include <ctime>
+#include <climits>
+#include <iomanip>
+#include <queue> // 新增：用于FIFO算法的队列
+
+using namespace std;
+
+class LruAndOpt {
+private:
+    // 设置页面大小为10
+    const int pageSize = 10;
+    // 物理页框数量
+    const int frameCount = 3;
+
+public:
+    int getPageNumber(int address) {
+        return address / pageSize;
+    }
+
+    // ================= FIFO 算法 (新增) =================
+    void Fifo(const vector<int>& A) {
+        int count = 0; // 缺页计数
+        int n = A.size();
+        unordered_map<int, int> pageMap; // 逻辑页 -> 物理页框
+        queue<int> q; // 记录进入内存的顺序
+
+        for (int i = 0; i < n; i++) {
+            int page = getPageNumber(A[i]);
+
+            // 第一次访问特殊处理
+            if (i == 0) {
+                count++;
+                pageMap[page] = 1;
+                q.push(page);
+            } else {
+                // 如果页面不在内存中 (缺页)
+                if (pageMap.find(page) == pageMap.end()) {
+                    count++;
+
+                    // 如果还有空闲物理页框
+                    if (pageMap.size() < frameCount) {
+                        int newFrameId = pageMap.size() + 1;
+                        pageMap[page] = newFrameId;
+                        q.push(page);
+                    } else {
+                        // 内存已满，需要置换
+                        // FIFO 核心：淘汰最早进入队列的页面
+                        int eliminate = q.front();
+                        q.pop();
+
+                        // 获取被淘汰页面的物理页框号，给新页面用
+                        int phy = pageMap[eliminate];
+                        pageMap.erase(eliminate);
+
+                        // 装入新页
+                        pageMap[page] = phy;
+                        q.push(page);
+                    }
+                }
+                // 如果页面已经在内存中 (Hit)，FIFO 不做任何操作，也不改变队列顺序
+            }
+        }
+
+        cout << "访问次数:" << n << ",缺页次数:" << count << ",缺页率:";
+        cout << fixed << setprecision(2) << ((double)count / n * 100) << "%" << endl;
+    }
+
+    // ================= OPT 算法 =================
+    void Opt(const vector<int>& A) {
+        int count = 0;
+        int n = A.size();
+        unordered_map<int, int> pageMap;
+
+        for (int i = 0; i < n; i++) {
+            int page = getPageNumber(A[i]);
+            if (i == 0) {
+                count++;
+                pageMap[page] = 1;
+            } else {
+                if (pageMap.find(page) == pageMap.end()) {
+                    count++;
+                    if (pageMap.size() < frameCount) {
+                        pageMap[page] = pageMap.size() + 1;
+                    } else {
+                        int eliminate = 0;
+                        int latest = -1;
+
+                        for (auto const& [k, v] : pageMap) {
+                            bool found = false;
+                            int time = 0;
+                            for (int j = i + 1; j < n; j++) {
+                                if (k == getPageNumber(A[j])) {
+                                    found = true;
+                                    time = j;
+                                    break;
+                                }
+                            }
+
+                            if (found) {
+                                if (latest < time) {
+                                    latest = time;
+                                    eliminate = k;
+                                }
+                            } else {
+                                eliminate = k;
+                                break;
+                            }
+                        }
+
+                        int phy = pageMap[eliminate];
+                        pageMap.erase(eliminate);
+                        pageMap[page] = phy;
+                    }
+                }
+            }
+        }
+
+        cout << "访问次数:" << n << ",缺页次数:" << count << ",缺页率:";
+        cout << fixed << setprecision(2) << ((double)count / n * 100) << "%" << endl;
+    }
+
+    // ================= LRU 算法 =================
+    void Lru(const vector<int>& A) {
+        int n = A.size();
+        int count = 0;
+        unordered_map<int, int> pageMap;
+
+        for (int i = 0; i < n; i++) {
+            int page = getPageNumber(A[i]);
+            if (i == 0) {
+                count++;
+                pageMap[page] = 1;
+            } else {
+                if (pageMap.find(page) == pageMap.end()) {
+                    count++;
+                    if (pageMap.size() < frameCount) {
+                        pageMap[page] = pageMap.size() + 1;
+                    } else {
+                        int eliminate = 0;
+                        int latest = INT_MAX;
+                        int k = 0;
+
+                        for (int j = i - 1; j >= 0; j--) {
+                            int pastPage = getPageNumber(A[j]);
+                            if (pageMap.count(pastPage) && latest > j) {
+                                latest = j;
+                                k++;
+                                eliminate = pastPage;
+                                if (k == frameCount) {
+                                    break;
+                                }
+                            }
+                        }
+
+                        int phy = pageMap[eliminate];
+                        pageMap.erase(eliminate);
+                        pageMap[page] = phy;
+                    }
+                }
+            }
+        }
+
+        cout << "访问次数:" << n << ",缺页次数:" << count << ",缺页率:";
+        cout << fixed << setprecision(2) << ((double)count / n * 100) << "%" << endl;
+    }
+};
+
+int main() {
+    srand((unsigned)time(NULL));
+
+    LruAndOpt lao;
+    cout << "页面大小为10,物理页框共3个" << endl;
+    cout << "请输入访问序列的个数:";
+
+    int n;
+    if (!(cin >> n)) return 0;
+
+    cout << "请输入随机数的限制:";
+    int limit;
+    cin >> limit;
+
+    // 1. 随机序列
+    vector<int> A1(n);
+    for (int i = 0; i < n; i++) {
+        A1[i] = rand() % limit;
+    }
+
+    // 2. 顺序序列 (0, 1, 2, 3...)
+    vector<int> A2(n);
+    for (int i = 0; i < n; i++) {
+        A2[i] = i;
+    }
+
+    // 3. 循环序列 (模拟局部性，如 0, 1, 2...99, 0, 1...)
+    vector<int> A3(n);
+    for (int i = 0; i < n; i++) {
+        A3[i] = i % 100; // 假设循环范围
+    }
+
+    cout << "=================OPT算法=================" << endl;
+    cout << "-----------------随机序列-----------------" << endl;
+    lao.Opt(A1);
+    cout << "-----------------顺序序列-----------------" << endl;
+    lao.Opt(A2);
+    cout << "-----------------循环序列-----------------" << endl;
+    lao.Opt(A3);
+
+    cout << endl << "=================FIFO算法=================" << endl;
+    cout << "-----------------随机序列-----------------" << endl;
+    lao.Fifo(A1);
+    cout << "-----------------顺序序列-----------------" << endl;
+    lao.Fifo(A2);
+    cout << "-----------------循环序列-----------------" << endl;
+    lao.Fifo(A3);
+
+    cout << endl << "=================LRU算法=================" << endl;
+    cout << "-----------------随机序列-----------------" << endl;
+    lao.Lru(A1);
+    cout << "-----------------顺序序列-----------------" << endl;
+    lao.Lru(A2);
+    cout << "-----------------循环序列-----------------" << endl;
+    lao.Lru(A3);
+
+    return 0;
+}
+```
+
+- FIFO (先进先出)
+    - 原理：总是淘汰最早进入内存的页面。
+    - 实现：使用 `std::queue<int> q`。新页进来排在队尾，需要置换时直接弹出队首（`q.front()`）
+- OPT (最佳置换算法)
+    - 原理：淘汰以后永不使用，或者在最长时间内不再被访问的页面
+    - 实现：代码会向后遍历数组 A（`for (int j = i + 1; j < n; j++)`），寻找内存中哪个页面在未来最晚才被用到。
+- LRU (最近最久未使用)
+    - 原理：淘汰最近一段时间内最久没有被使用的页面
+    - 实现：代码通过向后回溯（`for (int j = i - 1; j >= 0; j--)`）来观察哪些页面最近刚用过，挑出那个最远没用的
+
+*task_1 截图*
+![[Pasted image 20251229193709.png]]
+
+### task_2 Linux 下利用 /proc/pid/pagemap 技术计算某个变量或函数虚拟地址对应的物理地址等信息
+task_2.cpp
+```cpp
+#include <stdio.h>
+#include <unistd.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <inttypes.h>
+#include <string.h>
+
+//获取物理地址 //va为虚拟内存地址
+void VA2PA(unsigned long va) {
+    //页面大小
+    size_t pageSize = getpagesize();
+    //页号
+    unsigned long pageIndex = va / pageSize;
+    //页内偏移
+    unsigned long offset = va % pageSize;
+    FILE* fp;
+
+    // 定义用于接收读取结果的变量 (修复错误 A)
+    uint64_t it;
+
+    printf("Virtual Address: 0x%lx\n", va);
+    printf("Page Index: 0x%lx\nPage Offset: 0x%lx\n", pageIndex, offset);
+
+    if((fp = fopen("/proc/self/pagemap", "rb")) == NULL) {
+        printf("Error: Cannot open pagemap. Are you root?\n");
+        return;
+    }
+
+    unsigned long fileOffset = pageIndex * sizeof(uint64_t);
+    if(fseek(fp, fileOffset, SEEK_SET) != 0) {
+        printf("Error: fseek failed!\n");
+        fclose(fp);
+        return;
+    }
+
+    if(fread(&it, sizeof(uint64_t), 1, fp) != 1) {
+        printf("Error: fread failed!\n");
+        fclose(fp);
+        return;
+    }
+    fclose(fp);
+
+    // 第63位记录当前页面位置：1为在物理内存中，0表示不在物理内存中
+    // 修复错误 C: 增加括号修正优先级
+    if(((it >> 63) & 1) == 0) {
+        printf("Page Present is 0.\nNot in the Physical Memory.\n");
+        return;
+    }
+
+    // 0-54位为物理页号
+    uint64_t pPageIndex = (((uint64_t)1 << 55) - 1) & it;
+    printf("Physical Page Index: 0x%" PRIx64 "\n", pPageIndex);
+
+    // 物理地址 = 物理页号*页大小+页内偏移
+    unsigned long pa = pPageIndex * pageSize + offset;
+    printf("Physical Address: 0x%lx\n\n", pa);
+}
+
+int a = 1000;
+
+int max(int a, int b) {
+    return a >= b ? a : b;
+}
+
+int main() {
+    printf("pid = %d\n", getpid());
+
+    printf("Global variable a:\n");
+    VA2PA((unsigned long)&a);
+
+    printf("Function max:\n");
+    VA2PA((unsigned long)(void*)&max); 
+
+    return 0;
+}
+```
+
+- main 函数
+    - 打印当前进程 ID
+    - 计算变量 a 虚拟地址对应的物理地址
+    - 打印函数 max 虚拟地址对应的物理地址
+- VA2PA 函数
+    - 使用 `getpagesize()` 获取系统页大小（通常为 4KB），计算输入地址对应的虚拟页号 (VPN) 和页内偏移 (Offset)
+    - 打开 `/proc/self/pagemap`（内核提供的页表映射接口），利用 `fseek` 定位到对应页号的条目位置。计算公式为：`文件偏移量 = 虚拟页号 * 8字节`
+    - 读取 8字节（64位）的页表条目数据 (`uint64_t`)
+    - 检查读取数据的**第63位**（Present Bit：为 1 表明页面在内存中
+    - 利用位掩码 (`0-54位`) 从条目中提取物理页框号 (PFN)
+    - 通过公式 `物理地址 = 物理页框号 * 页大小 + 页内偏移` 得出最终物理地址并打印。
+
+*task_2 截图*
+![[Pasted image 20251229195404.png]]
+
+## 实验四
+### task_1 编写一个 Linux 内核模块，并完成模块的安装/卸载等操作
+
