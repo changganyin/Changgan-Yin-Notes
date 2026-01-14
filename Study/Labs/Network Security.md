@@ -1,4 +1,23 @@
 ## 实验三
+新建虚拟机
+```bash
+# 在 VM 上创建 docker 网络 extranet
+sudo docker network create --subnet=10.0.2.0/24 --gateway=10.0.2.8 --opt "com.docker.network.bridge.name"="docker1" extranet
+
+# 在 VM 上创建 docker 网络 intranet
+sudo docker network create --subnet=192.168.60.0/24 --gateway=192.168.60.1 --opt "com.docker.network.bridge.name"="docker2" intranet
+
+# 在 VM 上新开一个终端，创建并运行容器 HostU
+sudo docker run -it --name=HostU --hostname=HostU --net=extranet --ip=10.0.2.7 --privileged "seedubuntu" /bin/bash
+
+# 在 VM 上新开一个终端，创建并运行容器 HostV
+sudo docker run -it --name=HostV --hostname=HostV --net=intranet --ip=192.168.60.101 --privileged "seedubuntu" /bin/bash
+
+# 在容器 HostU 和 HostV 内分别删除掉默认路由
+route del default
+
+```
+
 启动虚拟机
 ```bash
 VM:
@@ -10,8 +29,12 @@ sudo docker exec -it HostV /bin/bash
 
 给 HostU 和 HostU2 添加 hosts
 ```bash
-HostU, HostU2:
 echo "10.0.2.8 ycg.com" >> /etc/hosts
+```
+
+给 HostV 添加路由
+```bash
+route add -net 192.168.53.0/24 gw 192.168.60.1
 ```
 
 生成证书
@@ -25,6 +48,7 @@ touch index.txt serial
 echo 1000 > serial 
 # 设置证书的初始序列号
 
+cd myvpn/cert_server
 openssl req -new -x509 -keyout ca-ycg-key.pem -out ca-ycg-crt.pem -config openssl.cnf
 # 生成 CA 的私钥（ca-ycg-key.pem）和自签名根证书（ca-ycg-crt.pem）
 openssl genrsa -des3 -out server-ycg-key.pem 2048
@@ -33,6 +57,10 @@ openssl req -new -key server-ycg-key.pem -out server-ycg-csr.pem -config openssl
 # 生成证书签名请求 (CSR)
 openssl ca -in server-ycg-csr.pem -out server-ycg-crt.pem -cert ca-ycg-crt.pem -keyfile ca-ycg-key.pem -config openssl.cnf
 # 使用第一部分创建的 CA 私钥对服务器的 CSR 进行签名，生成服务器证书 server-ycg-crt.pem
+
+mkdir ca_client
+cp cert_server/ca-ycg-crt.pem ca_client/
+c_rehash ca_client
 ```
 
 ![[Pasted image 20251223213550.png]]
@@ -73,6 +101,11 @@ sudo ./myser
 
 HostU:
 faketime '2035-09-09 00:00:00' ./mycli ycg.com 4433 seed dees 2
+
+or
+
+date -s '2035-09-09 00:00:00'
+./mycli ycg.com 4433 seed dees 2
 ```
 
 ![[Pasted image 20251223212538.png]]
