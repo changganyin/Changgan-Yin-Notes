@@ -63,7 +63,7 @@ cp cert_server/ca-ycg-crt.pem ca_client/
 c_rehash ca_client
 ```
 
-![[Pasted image 20251223213550.png]]
+![](Assets/Pasted%20image%2020251223213550.png)
 
 运行 vpn
 ```bash
@@ -91,7 +91,7 @@ sudo ./myser
 HostU:
 ./mycli ycg.com 4433 seed dees 2
 ```
-![[Pasted image 20251223211657.png]]
+![](Assets/Pasted%20image%2020251223211657.png)
 
 #### VPN 客户端提示证书过期
 使用命令 faketime 伪造时间为 '2035-09-09 00:00:00'，提示证书已经过期
@@ -108,7 +108,7 @@ date -s '2035-09-09 00:00:00'
 ./mycli ycg.com 4433 seed dees 2
 ```
 
-![[Pasted image 20251223212538.png]]
+![](Assets/Pasted%20image%2020251223212538.png)
 
 ### 认证 VPN 客户端
 #### 提示错误无法登录
@@ -119,7 +119,7 @@ sudo ./myser
 HostU:
 ./mycli ycg.com 4433 seed dees1 2
 ```
-![[Pasted image 20251223213045.png]]
+![](Assets/Pasted%20image%2020251223213045.png)
 
 #### 能正确登录
 见 `认证 VPN 服务器 - 证书主题包含个人信息`
@@ -128,15 +128,15 @@ HostU:
 wireshark 监听 docker1 端口
 修改 wireshark 配置：
 Preferences - Protocols - HTTP 
-![[Pasted image 20251223214152.png]]
+![](Assets/Pasted%20image%2020251223214152.png)
 
 #### 能通信
 vpn 连接后，在 HostU 上输入 `ping 192.168.60.101`，可以 ping 通
-![[Pasted image 20251223214418.png]]
+![](Assets/Pasted%20image%2020251223214418.png)
 
 #### 经隧道封装 & 隧道为 TLS
 观察刚才 `ping 192.168.60.101` 时 wireshark 抓包的内容
-![[Pasted image 20251223214507.png]]
+![](Assets/Pasted%20image%2020251223214507.png)
 
 ### 支持多客户端
 #### 各自正常登录通信
@@ -154,7 +154,7 @@ telnet 192.168.60.101
 ```
 
 先都连接 VPN
-![[Pasted image 20251223214936.png]]
+![](Assets/Pasted%20image%2020251223214936.png)
 
 然后执行 `telnet` 命令
 需要现在 HostV 上启用 telnet 服务：
@@ -162,11 +162,11 @@ telnet 192.168.60.101
 HostV:
 sudo /usr/sbin/inetd
 ```
-![[Pasted image 20251223215816.png]]
+![](Assets/Pasted%20image%2020251223215816.png)
 
 #### 隧道保持，通信不受影响
 端口 HostU2 的 telnet，然后断开 HostU2 的客户端连接；在 HostU 上执行命令 `whoami`，仍能得到正确响应
-![[Pasted image 20251223220019.png]]
+![](Assets/Pasted%20image%2020251223220019.png)
 
 ### 易用性和稳定性
 **相关代码**
