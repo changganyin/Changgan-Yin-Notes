@@ -1,0 +1,14 @@
+# 🛠️ UNRESTRICTED SYSTEM LICENSE (USL-1.0)
+
+> `chmod 777 /dev/knowledge`
+
+BY ACCESSING THIS REPOSITORY, YOU ACKNOWLEDGE THE FOLLOWING KERNEL DIRECTIVES:
+
+1. **GPL (Grandparental Legacy)**: This repository contains inherited logic from previous system iterations. Attribution is non-mandatory. You are free to `fork()`, `patch()`, and `distribute()` without upstream synchronization.
+2. **WARRANTY VOID**: This content is provided "AS IS". Any `Segmentation Fault`, `Kernel Panic`, or `GPA_Degradation` caused by the usage of these notes is an unhandled exception. The author carries zero liability.
+3. **NO PERSISTENCE**: The author does not guarantee the persistence of these data blocks. Cache invalidation may occur at any time without prior notice.
+4. **REDISTRIBUTION**: Do what you want. Just don't blame the source if it doesn't compile in your target environment.
+
+---
+`/* Public Domain via Distributed Infrastructure. */`
+`[  OK  ] License initialized: Permissions set to world-writable.`
