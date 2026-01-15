@@ -13,6 +13,6 @@
 - **Buffer Overflow**: Pushing 512KB of syllabus data into a 256KB stack. Return address hijacked; executing custom shellcode in User Mode.
 
 ---
-
 `[  OK  ] System status: 200 OK`
+
 `[ WARN ] HTTP/1.1 404 Not Found - Requested resource 'Future_Success' at 0x00000000 is not yet mapped.`
