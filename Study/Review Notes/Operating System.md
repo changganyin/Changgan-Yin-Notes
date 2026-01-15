@@ -151,7 +151,7 @@
 4. 系统自举/加载 OS
 
 ### 操作系统的启动
-![](Pasted%20image%2020260114154743.png)
+![](attachments/Pasted%20image%2020260114154743.png)
 
 **实模式**（实地址模式，REAL MODE）
 - 按照 8086 方法访问 0 - FFFFFH 的地址空间（1MB）

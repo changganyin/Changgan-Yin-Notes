@@ -192,7 +192,7 @@ echo "----------------------------------------"
 ```
 
 *实验一截图*
-![](Assets/Pasted%20image%2020251223153920.png)
+![](attachments/Pasted%20image%2020251223153920.png)
 
 ## 实验二
 ### task_1 在 Linux 下创建两个线程 A 和 B, 循环输出数据或者字符串
@@ -251,7 +251,7 @@ g++ task_1.cpp -o task_1 -lpthread
 5. `main` 函数使用 `pthread_join` 等待两个子线程全部执行完毕后才退出
 
 *task_1 截图*
-![](Assets/Pasted%20image%2020251223154235.png)
+![](attachments/Pasted%20image%2020251223154235.png)
 
 ### task_2 在 Linux 下创建父子进程，实现 wait 同步函数，理解父子进程同步
 task_2.cpp
@@ -308,7 +308,7 @@ g++ task_2.cpp -o task_2
 4. **状态捕获**：子进程退出后，父进程被唤醒，利用宏 `WIFEXITED` 确认子进程是正常退出的，并用 `WEXITSTATUS` 提取出子进程返回的数值 42
 
 *task_2 截图*
-![](Assets/Pasted%20image%2020251223154345.png)
+![](attachments/Pasted%20image%2020251223154345.png)
 
 ### task_3 在 Windows 下，利用线程实现并发画圆画方
 task_3.cpp
@@ -488,7 +488,7 @@ g++ .\task_3.cpp -o task_3 -lgdi32
 4. `main` 函数利用 `WaitForSingleObject` 阻塞等待两个绘图线程执行完毕
 
 *task_3 截图*
-![](Assets/Pasted%20image%2020251223154415.png)
+![](attachments/Pasted%20image%2020251223154415.png)
 
 ### task_4 在 Linux 下利用线程实现“生产者-消费者”同步控制
 task_4.cpp
@@ -607,7 +607,7 @@ g++ task_4.cpp -o task_4 -lpthread
 5. 通过 `(index + 1) % BUFFER_SIZE` 的取模运算，实现固定大小数组的循环利用，使 `in` 和 `out` 指针在缓冲区内首尾相连地循环移动
 
 *task_4 截图*
-![](Assets/Pasted%20image%2020251223154452.png)
+![](attachments/Pasted%20image%2020251223154452.png)
 
 ### task_6 在 Linux 下模拟哲学家就餐，提供死锁和非死锁解法
 task_6_gui.c
@@ -816,10 +816,10 @@ gcc task_6_gui.c -o task_6_gui -lpthread -lncurses
 
 *task_6 截图*
 死锁：
-![](Assets/Pasted%20image%2020251223154600.png)
+![](attachments/Pasted%20image%2020251223154600.png)
 
 非死锁：
-![](Assets/Pasted%20image%2020251223154530.png)
+![](attachments/Pasted%20image%2020251223154530.png)
 
 ## 实验三
 ### task_1 Linux模拟实现 OPT, FIFO, LRU 等淘汰算法
@@ -1068,7 +1068,7 @@ int main() {
     - 实现：代码通过向后回溯（`for (int j = i - 1; j >= 0; j--)`）来观察哪些页面最近刚用过，挑出那个最远没用的
 
 *task_1 截图*
-![](Assets/Pasted%20image%2020251229193709.png)
+![](attachments/Pasted%20image%2020251229193709.png)
 
 ### task_2 Linux 下利用 /proc/pid/pagemap 技术计算某个变量或函数虚拟地址对应的物理地址等信息
 task_2.cpp
@@ -1163,7 +1163,7 @@ int main() {
     - 通过公式 `物理地址 = 物理页框号 * 页大小 + 页内偏移` 得出最终物理地址并打印。
 
 *task_2 截图*
-![](Assets/Pasted%20image%2020251229195404.png)
+![](attachments/Pasted%20image%2020251229195404.png)
 
 ## 实验四
 ### task_1 编写一个 Linux 内核模块，并完成模块的安装/卸载等操作
@@ -1232,8 +1232,8 @@ sudo rmmod ycg # 卸载模块
 ```
 
 *task_1 截图*
-![](Assets/Pasted%20image%2020251230144542.png)
-![](Assets/Pasted%20image%2020251230144918.png)
+![](attachments/Pasted%20image%2020251230144542.png)
+![](attachments/Pasted%20image%2020251230144918.png)
 
 ### task_2 在 Linux 平台编写一个字符设备的驱动程序和测试用的应用程序
 - ycgDrive.c
@@ -1438,9 +1438,9 @@ sudo dmesg | tail -7
 ```
 
 *taask_2 截图*
-![](Assets/Pasted%20image%2020251230145821.png)
-![](Assets/Pasted%20image%2020251230150249.png)
-![](Assets/Pasted%20image%2020251230150451.png)
+![](attachments/Pasted%20image%2020251230145821.png)
+![](attachments/Pasted%20image%2020251230150249.png)
+![](attachments/Pasted%20image%2020251230150451.png)
 
 ### task_3 实现 proc 接口，将应用程序和驱动程序的部分交互信息写入proc文件系统，并在应用程序快结束时读出相关文件信息并显示出来
 - ycgDrive2.c
